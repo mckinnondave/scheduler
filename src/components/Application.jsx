@@ -53,7 +53,10 @@ export default function Application(props) {
     axios.get(`/api/days`)
       .then ((res) => {
         setDays([...res.data]);
-        console.log(res.data);
+        console.log("RESPONSE", res.data);
+      })
+      .catch((error) => {
+        console.log(`AXIOS ERROR:`, error);
       })
   }, [day])
 
