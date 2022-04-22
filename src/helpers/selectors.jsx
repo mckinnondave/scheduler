@@ -15,3 +15,20 @@ export function getAppointmentsForDay(state, day) {
   // console.log("APPOINTMENT", dayAppointments)
   return dayAppointments;
 }
+
+export function getInterview(state, interview) {
+  const interviewObject = {};
+  // console.log("INTERVIEW", interview);
+  // console.log("INTERVIEWERS", state.interviewers);
+  // console.log("KEY1", interview.interviewer);
+  if (!interview) {
+    return null;
+  } else {
+    const interviewer = state.interviewers[interview.interviewer]
+    // console.log("INT", interviewer);
+    interviewObject.student = interview.student;
+    interviewObject.interviewer = interviewer
+  }
+  console.log("INTERVIEWobject", interviewObject);
+  return interviewObject;
+}
