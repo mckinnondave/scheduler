@@ -29,6 +29,25 @@ export function getInterview(state, interview) {
     interviewObject.student = interview.student;
     interviewObject.interviewer = interviewer
   }
-  console.log("INTERVIEWobject", interviewObject);
+  // console.log("INTERVIEWobject", interviewObject);
   return interviewObject;
+}
+
+export function getInterviewersForDay(state, day) {
+  // console.log("STATE", state);
+  const filteredDay = state.days.filter(ele => ele.name === day);
+  const interviewersArray = [];
+  // console.log("FILTERED", filteredDay[0]);
+  if(!filteredDay[0]) {
+    return [];
+  } else {
+    const interviewerIds = filteredDay[0].interviewers;
+    // console.log("INTERVIEWERiD", interviewerIds);
+    for (const intId of interviewerIds) {
+      // console.log("INT", intId)
+      interviewersArray.push(state.interviewers[intId])
+    }
+  }
+  // console.log("INTERVIEWERS", interviewersArray)
+  return interviewersArray;
 }
