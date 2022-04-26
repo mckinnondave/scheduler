@@ -30,12 +30,12 @@ export default function useApplicationData() {
           count++;
         }
       }
-      const updatedDay = {...day, spots: count}
+      const updatedDay = { ...day, spots: count };
       newDays.push(updatedDay);
     }
-    console.log(newDays);
     const newState = {
-      ...state, days: newDays
+      ...state,
+      days: newDays,
     };
     return newState;
   }
