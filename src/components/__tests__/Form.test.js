@@ -11,8 +11,8 @@ describe("Form", () => {
     {
       id: 1,
       student: "Sylvia Palmer",
-      avatar: "https://i.imgur.com/LpaY82x.png"
-    }
+      avatar: "https://i.imgur.com/LpaY82x.png",
+    },
   ];
 
   it("renders without student name if not provided", () => {
@@ -32,61 +32,35 @@ describe("Form", () => {
   it("validates that the student name is not blank", () => {
     const onSave = jest.fn();
 
-    const { getByText } = render (
-      <Form onSave={onSave} interviewers={interviewers} student={undefined}/>
-    )
-
-    fireEvent.click(getByText("Save"));
-
-    /* 1. Create the mock onSave function */    
-  
-    /* 2. Render the Form with interviewers and the onSave mock function passed as an onSave prop, the student prop should be blank or undefined */
-  
-    /* 3. Click the save button */
-  
-    expect(getByText(/student name cannot be blank/i)).toBeInTheDocument();
-    expect(onSave).not.toHaveBeenCalled();
-  });
-  
-  // Errors in compass. Removed as per mentors
-  xit("validates that the interviewer cannot be null", () => {
-    const onSave = jest.fn();
-    
-    const { getByText } = render (
-      <Form interviewers={interviewers} onSave={onSave} student="Lydia Miller-Jones"/>
+    const { getByText } = render(
+      <Form onSave={onSave} interviewers={interviewers} student={undefined} />
     );
 
     fireEvent.click(getByText("Save"));
 
-     /* 1. Create the mock onSave function */
-
-    /* 2. Render the Form with interviewers and the onSave mock function passed as an onSave prop, the interviewer prop should be null */
-  
-    /* 3. Click the save button */
-  
-    expect(getByText(/please select an interviewer/i)).toBeInTheDocument();
+    expect(getByText(/student name cannot be blank/i)).toBeInTheDocument();
     expect(onSave).not.toHaveBeenCalled();
   });
-  
+
   it("can successfully save after trying to submit an empty student name", () => {
     const onSave = jest.fn();
     const { getByText, getByPlaceholderText, queryByText } = render(
       <Form interviewers={interviewers} onSave={onSave} />
     );
-  
+
     fireEvent.click(getByText("Save"));
-  
+
     expect(getByText(/student name cannot be blank/i)).toBeInTheDocument();
     expect(onSave).not.toHaveBeenCalled();
-  
+
     fireEvent.change(getByPlaceholderText("Enter Student Name"), {
-      target: { value: "Lydia Miller-Jones" }
+      target: { value: "Lydia Miller-Jones" },
     });
-  
+
     fireEvent.click(getByText("Save"));
-  
+
     expect(queryByText(/student name cannot be blank/i)).toBeNull();
-  
+
     expect(onSave).toHaveBeenCalledTimes(1);
     expect(onSave).toHaveBeenCalledWith("Lydia Miller-Jones", null);
   });
@@ -101,17 +75,17 @@ describe("Form", () => {
         onCancel={onCancel}
       />
     );
-  
+
     fireEvent.click(getByText("Save"));
-  
+
     fireEvent.change(getByPlaceholderText("Enter Student Name"), {
-      target: { value: "Lydia Miller-Jones" }
+      target: { value: "Lydia Miller-Jones" },
     });
-  
+
     fireEvent.click(getByText("Cancel"));
-  
+
     expect(getByPlaceholderText("Enter Student Name")).toHaveValue("");
-  
+
     expect(onCancel).toHaveBeenCalledTimes(1);
   });
 });
