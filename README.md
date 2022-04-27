@@ -15,7 +15,7 @@ This project was built through instruction from Lighthouse Labs.
 !["Delete Feature"](https://github.com/mckinnondave/scheduler/blob/master/docs/delete.png?raw=true)
 
 ### Add New Appointment
-!["Add New Appointment"](https://github.com/mckinnondave/scheduler/blob/master/docs/create-new.png?raw=true)
+!["Add New Appointment"](https://github.com/mckinnondave/scheduler/blob/master/docs/create.png?raw=true)
 
 ## Project Stack
 
