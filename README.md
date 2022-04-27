@@ -8,34 +8,34 @@ This project was built through instruction from Lighthouse Labs
 
 ## Final Product
 
-## Main Page
+### Main Page
 !["Main Page"](https://github.com/mckinnondave/scheduler/blob/master/docs/main.png?raw=true)
 
-## Delete Feature
+### Delete Feature
 !["Delete Feature"](https://github.com/mckinnondave/scheduler/blob/master/docs/delete.png?raw=true)
 
-## Add New Appointment
+### Add New Appointment
 !["Add New Appointment"](https://github.com/mckinnondave/scheduler/blob/master/docs/create-new.png?raw=true)
 
 ## Project Stack
 
 ### Front-End:
--React
--JSX
--SASS
--Axios
--HTML
+- React
+- JSX
+- SASS
+- Axios
+- HTML
 
 ### Back-End:
--Express
--Node.js
--PostgreSQL
+- Express
+- Node.js
+- PostgreSQL
 
 ### Testing:
--Cypress
--Jest
--Storybook
--Webpack Dev Server
+- Cypress
+- Jest
+- Storybook
+- Webpack Dev Server
 
 ## Setup
 
