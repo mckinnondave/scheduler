@@ -11,12 +11,11 @@ export default function useVisualMode(initial) {
     }
     setHistory([...newHistory, newMode])
   };
-
+  
   function back() {
     if (history.length <= 1) {
       return;
     }
-    // Create copy of history, remove end, set history to all but last element
     const newHistory = [...history]
     newHistory.pop();
     setHistory(newHistory)
