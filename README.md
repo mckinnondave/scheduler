@@ -8,8 +8,13 @@ This project was built through instruction from Lighthouse Labs
 
 ## Final Product
 
+## Main Page
 !["Main Page"](https://github.com/mckinnondave/scheduler/blob/master/docs/main.png?raw=true)
+
+## Delete Feature
 !["Delete Feature"](https://github.com/mckinnondave/scheduler/blob/master/docs/delete.png?raw=true)
+
+## Add New Appointment
 !["Add New Appointment"](https://github.com/mckinnondave/scheduler/blob/master/docs/create-new.png?raw=true)
 
 ## Project Stack
