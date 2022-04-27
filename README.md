@@ -8,8 +8,9 @@ This project was built through instruction from Lighthouse Labs
 
 ## Final Product
 
-<!-- !["Desktop Layout"](https://github.com/mckinnondave/tweeter/blob/master/public/images/fullscreen.png?raw=true)
-!["Tablet Layout"](https://github.com/mckinnondave/tweeter/blob/master/public/images/tablet-size.png?raw=true) -->
+!["Main Page"](https://github.com/mckinnondave/scheduler/blob/master/docs/main.png?raw=true)
+!["Delete Feature"](https://github.com/mckinnondave/scheduler/blob/master/docs/delete.png?raw=true)
+!["Add New Appointment"](https://github.com/mckinnondave/scheduler/blob/master/docs/create-new.png?raw=true)
 
 ## Project Stack
 
