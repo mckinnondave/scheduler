@@ -18,9 +18,9 @@ export default function Appointment(props) {
   const SAVING = "SAVING";
   const CONFIRM = "CONFIRM";
   const DELETING = "DELETING";
-  const EDIT = "EDIT"
-  const ERROR_SAVE = "ERROR_SAVE"
-  const ERROR_DELETE = "ERROR_DELETE"
+  const EDIT = "EDIT";
+  const ERROR_SAVE = "ERROR_SAVE";
+  const ERROR_DELETE = "ERROR_DELETE";
 
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
 
@@ -35,21 +35,21 @@ export default function Appointment(props) {
         transition(SHOW);
       })
       .catch(() => {
-        transition(ERROR_SAVE)
+        transition(ERROR_SAVE);
       });
   }
 
   function deleteInterviewItem() {
-    transition(CONFIRM)
-    transition(DELETING, true)
+    transition(CONFIRM);
+    transition(DELETING, true);
     deleteInterview(id)
       .then(() => {
         transition(EMPTY);
       })
       .catch(() => {
-        transition(ERROR_DELETE, true)
+        transition(ERROR_DELETE, true);
       });
-  };
+  }
 
   return (
     <article className="appointment">
@@ -81,24 +81,26 @@ export default function Appointment(props) {
       )}
       {mode === DELETING && <Status message="Deleting" />}
       {mode === EDIT && (
-        <Form 
+        <Form
           interviewers={interviewers}
           student={interview.student}
           interviewer={interview.interviewer.id}
           onCancel={back}
           onSave={(student, interviewer) => save(student, interviewer)}
-        /> 
+        />
       )}
-      {mode === ERROR_SAVE && 
-      <Error 
-        message={"There was an error when saving your interview"}
-        onClose={back}
-      />}
-      {mode === ERROR_DELETE && 
-      <Error 
-        message={"There was an error when deleting your interview"}
-        onClose={back}
-      />}
+      {mode === ERROR_SAVE && (
+        <Error
+          message={"There was an error when saving your interview"}
+          onClose={back}
+        />
+      )}
+      {mode === ERROR_DELETE && (
+        <Error
+          message={"There was an error when deleting your interview"}
+          onClose={back}
+        />
+      )}
     </article>
   );
 }

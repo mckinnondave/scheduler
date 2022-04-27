@@ -11,6 +11,26 @@ This project was built through instruction from Lighthouse Labs
 <!-- !["Desktop Layout"](https://github.com/mckinnondave/tweeter/blob/master/public/images/fullscreen.png?raw=true)
 !["Tablet Layout"](https://github.com/mckinnondave/tweeter/blob/master/public/images/tablet-size.png?raw=true) -->
 
+## Project Stack
+
+### Front-End:
+-React
+-JSX
+-SASS
+-Axios
+-HTML
+
+### Back-End:
+-Express
+-Node.js
+-PostgreSQL
+
+### Testing:
+-Cypress
+-Jest
+-Storybook
+-Webpack Dev Server
+
 ## Setup
 
 Install dependencies with `npm install`.
